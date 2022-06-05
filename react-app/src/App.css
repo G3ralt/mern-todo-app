@@ -1,0 +1,135 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 500px;
+    background: #475592;
+    text-align: center;
+    margin: 100px auto;
+    border-radius: 25px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ul {
+    padding: 5% 10%;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    color: #fff;
+    background: linear-gradient( 90deg, rgb(135 125 119) 0%, rgb(74 56 49) 100%);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.todo-item .icons {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.todo-item .icons .delete {
+    color: #ed1111;
+}
+
+.todo-item .icons .edit {
+    color: #abab2a;
+}
+
+.todo-item .text {
+    flex-grow: 1;
+    text-align: start;
+}
+
+.todo-form {
+    display: flex;
+    padding: 10%;
+}
+
+.todo-text-input {
+    flex-grow: 1;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #a29caf;
+    background: transparent;
+    color: #fff;
+}
+
+.todo-form .submit {
+    padding: 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #53423b;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+
+/*
+    Checkbox
+*/
+
+.checkbox {
+    font-size: 1.3em;
+    line-height: 1.1;
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #000000;
+    /* Windows High Contrast Mode */
+    background-color: blue;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid #475592;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    color: rgb(154, 140, 140);
+    cursor: not-allowed;
+}
